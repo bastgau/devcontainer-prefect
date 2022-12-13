@@ -1,0 +1,43 @@
+###
+### A complete description of a Prefect Deployment for flow 'log-flow'
+###
+name: log-simple
+description: null
+version: cf2fa1fc0212dff5322c4a65da6b116a
+# The work queue that will handle this deployment's runs
+work_queue_name: test
+tags: []
+parameters: {'name': 'Marvin'}
+schedule: null
+infra_overrides:
+  env:
+    PREFECT_LOGGING_LEVEL: DEBUG
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: log-flow
+manifest_path: null
+storage: null
+path: /workspaces/app/orchestrator/prefect-tutorial
+entrypoint: log_flow.py:log_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    name:
+      title: name
+      type: string
+  required:
+  - name
+  definitions: null
